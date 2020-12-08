@@ -1,0 +1,33 @@
+@use '~@assets/Constants.scss';
+
+.header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.2rem 0 1rem 0;
+  border-bottom: 1px solid Constants.$border_color;
+  background: #fff;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 43px;
+  }
+
+  &__title {
+    margin: 0 0 0 auto;
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+
+    @media screen and (max-width: 740px) {
+      padding-right: 24px;
+    }
+
+    @media screen and (max-width: 410px) {
+      padding-right: 15px;
+    }
+  }
+}

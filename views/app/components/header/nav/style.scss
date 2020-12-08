@@ -1,0 +1,58 @@
+@use '~@assets/Constants.scss';
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+
+  a {
+    padding: 8px;
+    color: Constants.$main_color;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    span:after {
+      display: block;
+      content: '';
+      width: 0;
+      border-top: 1px solid Constants.$lighten_color;
+      position: relative;
+      left: 50%;
+      transition-duration: 0.3s;
+    }
+
+    span {
+      display: inline-block;
+
+      &:hover {
+        color: Constants.$lighten_color;
+
+        &:after {
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    display: none;
+    position: absolute;
+    top: 62px;
+    left: Constants.$dropdown-left-padding;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background: white;
+    padding: 6px 0;
+
+    a {
+      padding: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    top: 60px;
+    left: 15px;
+  }
+}

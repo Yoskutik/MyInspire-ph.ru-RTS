@@ -1,0 +1,9 @@
+@use '~@assets/Constants.scss';
+
+.footer__copyright {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.8rem;
+  color: Constants.$white_color;
+}

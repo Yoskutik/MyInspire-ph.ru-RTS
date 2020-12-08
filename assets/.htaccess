@@ -1,0 +1,38 @@
+ErrorDocument 404 /404/
+
+RewriteEngine on
+
+Redirect 301 /pricelist/ https://myinspire-ph.ru/prices/
+
+# Getting rid of index.php
+RewriteCond    %{THE_REQUEST} ^.*/index.php
+RewriteRule    ^(.*)$ / [R=301,L]
+
+# Getting rid of index.html
+RewriteCond    %{THE_REQUEST} ^.*/index.html
+RewriteRule    ^(.*)$ / [R=301,L]
+
+# Getting rid of multiple slashes
+RewriteCond    %{THE_REQUEST} ^.*/{2,}
+RewriteRule    ^(.*)$ / [R=301,L]
+
+# Getting rid of trailing '?'
+RewriteCond %{THE_REQUEST} \?\ HTTP [NC]
+RewriteRule ^/?(index\.cfm)? /? [R=301,L]
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 10 days"
+
+    ExpiresByType image/x-icon "access plus 10 days"
+
+    ExpiresByType image/gif "access plus 10 days"
+    ExpiresByType image/png "access plus 10 days"
+    ExpiresByType image/jpg "access plus 10 days"
+    ExpiresByType image/jpeg "access plus 10 days"
+    ExpiresByType image/webp "access plus 10 days"
+
+    ExpiresByType text/css "access plus 10 days"
+
+    ExpiresByType application/javascript "access plus 10 days"
+</IfModule>

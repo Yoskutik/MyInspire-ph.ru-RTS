@@ -1,0 +1,45 @@
+@use '~@assets/Constants.scss';
+
+.dropdown-button {
+  display: none;
+  position: absolute;
+  top: 17px;
+  left: Constants.$dropdown-left-padding;
+  padding: 9px 11px;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background: #e2e6ea;
+  }
+
+  &:active {
+    background: #dae0e5;
+  }
+
+  span {
+    display: block;
+    width: 25px;
+    height: 5px;
+    margin-bottom: 5px;
+    background: darkgray;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .dropdown-button {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .dropdown-button {
+    left: 15px;
+    top: 14px;
+  }
+}
