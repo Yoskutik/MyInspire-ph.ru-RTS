@@ -1,0 +1,26 @@
+@use '~@assets/Constants.scss';
+
+.info {
+  background: white;
+  padding: 20px 0 0;
+
+  &__container {
+    display: flex;
+    padding: 0 20px 2.3rem 20px;
+    align-items: flex-start;
+    border-bottom: 1px solid Constants.$border_color;
+
+    @media screen and (max-width: Constants.$page-size-l) {
+        padding: 0 0 2rem 0;
+    }
+  }
+
+  @media screen and (max-width: Constants.$page-size-m) {
+    padding-top: 0;
+
+    &__container {
+      flex-wrap: wrap;
+      padding: 0 20px 20px;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import './style.scss';
 
-interface IContainer {
+interface ContainerProps {
     cls?: string,
 }
 
-export const Container: FC<IContainer> = ({ cls, children }) => (
+export const Container: FC<ContainerProps> = ({ cls, children }) => (
     <div className={`container ${cls}`}>
         {children}
     </div>

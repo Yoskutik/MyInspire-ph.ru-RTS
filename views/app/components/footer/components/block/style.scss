@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: Constants.$page-size-s) {
   .footer__block {
     margin: 0 1.5rem 5px 0;
   }

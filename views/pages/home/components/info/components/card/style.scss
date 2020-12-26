@@ -1,0 +1,80 @@
+@use '~@assets/Constants.scss';
+
+.info__card {
+  padding: 15px;
+  border: 1px solid Constants.$border_color;
+  border-radius: 5px;
+
+  &_avatar {
+    padding: 0.8rem 0.8rem 1.5rem 0.85rem;
+    border-bottom: 1px solid Constants.$border_color;
+    margin-bottom: 20px;
+
+    img {
+      border-radius: 5px;
+      max-width: 13rem;
+    }
+  }
+
+  &_title {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  &_subtitle {
+    font-size: 1.1rem;
+    font-weight: normal;
+    opacity: 0.7;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  &_description {
+    font-size: 0.9rem;
+    margin: 0 0 10px 0;
+  }
+
+  &_social {
+    display: flex;
+
+    a {
+      margin-right: 10px;
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (max-width: Constants.$page-size-s) and (min-width: 500px) {
+    display: flex;
+    width: 100%;
+
+    &_title {
+      margin: 12px 0 8px 0;
+    }
+
+    &_avatar {
+      border-bottom: none;
+      border-right: 1px solid Constants.$border_color;
+      margin: 0 20px 0 0;
+      padding: 10px 20px 10px 10px;
+
+      img {
+        max-width: 11.5rem;
+      }
+    }
+
+    &_social {
+      margin-top: auto;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+
+    &_avatar {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

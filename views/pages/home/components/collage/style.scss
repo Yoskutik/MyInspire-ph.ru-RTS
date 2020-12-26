@@ -1,0 +1,39 @@
+.collage {
+  max-width: 100%;
+
+  &.horizontal {
+    height: calc(50vw - 51px - 2.2rem);
+  }
+
+  &.vertical {
+    height: calc(150vw - 68px - 2.2rem);
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    transition-duration: 3.5s;
+    opacity: 1;
+  }
+
+  &__arrow {
+    position: absolute;
+    visibility: hidden;
+    animation: up-down 1.5s infinite linear;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -13,9 +13,10 @@
     "paths": {
       "@components": ["components"],
       "@components/icons": ["components/icons"],
-      "@utils/*": ["utils/*"],
+      "@utils": ["utils"],
       "@pages/*": ["views/pages/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@data/*": ["data/*"]
     }
   },
   "include": ["./**/*"],

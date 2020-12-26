@@ -1,13 +1,15 @@
+@use '~@assets/Constants.scss';
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
   box-sizing: border-box;
 
-  @media screen and (max-width: 1220px) {
+  @media screen and (max-width: Constants.$page-size-xl) {
     max-width: 960px;
   }
 
-  @media screen and (max-width: 980px) {
+  @media screen and (max-width: Constants.$page-size-l) {
     max-width: 720px;
   }
 }

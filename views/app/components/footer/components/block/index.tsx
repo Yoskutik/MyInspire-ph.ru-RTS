@@ -22,7 +22,7 @@ export const Block: FC<IBlock> = ({ title, links }) => {
             </h4>
             <div className="footer__block_body">
                 {links.map((it, i) => (
-                    <Fragment key={Math.random()}>
+                    <Fragment key={`${it.title}-${i}`}>
                         <a target="_blank" href={it.href} rel="noreferrer">
                             {it.title}
                         </a>

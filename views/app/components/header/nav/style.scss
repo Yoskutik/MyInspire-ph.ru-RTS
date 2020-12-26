@@ -35,7 +35,7 @@
     }
   }
 
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: Constants.$page-size-m) {
     display: none;
     position: absolute;
     top: 62px;
@@ -51,7 +51,7 @@
     }
   }
 
-  @media screen and (max-width: 410px) {
+  @media screen and (max-width: Constants.$page-size-s) {
     top: 60px;
     left: 15px;
   }

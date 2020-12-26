@@ -50,13 +50,5 @@
   "404": {
     "title": "Страница не найдена",
     "robots": false
-  },
-  "prices/coffee-in-bed": {
-    "title": "Coffee in bed | Фотодень",
-    "robots": false
-  },
-  "prices/only-you": {
-    "title": "Only you | Фотодень",
-    "robots": false
   }
 }

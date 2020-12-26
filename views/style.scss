@@ -3,6 +3,18 @@
 html {
   height: 100%;
   font-size: 18px;
+
+  @media screen and (max-width: Constants.$page-size-xl) {
+    font-size: 17px;
+  }
+
+  @media screen and (max-width: Constants.$page-size-l) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: Constants.$page-size-s) {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -33,40 +45,21 @@ hr {
   border-color: Constants.$border_color;
 }
 
-.hidden {
-  display: none;
+input:focus, textarea {
+  outline: none;
+}
+
+.page-not-found {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @font-face {
   font-family: Gotham;
   font-display: fallback;
   src: url(~@assets/Gotham.otf);
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@media screen and (max-width: 1220px) {
-  html {
-    font-size: 17px;
-  }
-}
-
-@media screen and (max-width: 980px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-
-@media screen and (max-width: 410px) {
-  html {
-    font-size: 14px;
-  }
 }

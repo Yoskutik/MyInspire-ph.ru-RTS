@@ -1,0 +1,48 @@
+@use '~@assets/Constants.scss';
+@import '~react-image-gallery/styles/scss/image-gallery';
+
+.portfolio {
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  z-index: 1;
+
+  &__close {
+    color: Constants.$white_color;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: transparent;
+    border: none;
+
+    &:hover {
+      text-shadow: 1px 1px 3px #fff;
+    }
+  }
+
+  .image-gallery {
+    height: 100%;
+
+    &-content {
+      height: 100%;
+    }
+  }
+
+  .image-gallery-thumbnails-wrapper.bottom {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    background: #000;
+  }
+}

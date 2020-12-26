@@ -1,0 +1,89 @@
+@use '~@assets/Constants.scss';
+
+.filters {
+  justify-content: flex-end;
+  align-items: stretch;
+  margin-top: 2rem;
+  display: flex;
+
+  &__block {
+    border: 1px solid Constants.$border_color;
+    border-radius: 5px;
+    margin-left: 20px;
+    display: flex;
+
+    & > span {
+      border-right: 1px solid Constants.$border_color;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.active {
+        background: lighten(Constants.$border_color, 5%);
+      }
+
+      &:hover {
+        background: lighten(Constants.$border_color, 10%);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__cost {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+
+    span {
+      background: darken(Constants.$border_color, 10%);
+      margin-bottom: 4px;
+      border-radius: 5px;
+      display: block;
+      width: 10px;
+      height: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.asc {
+      span:first-child {
+        width: 5px;
+      }
+
+      span:last-child {
+        width: 15px;
+      }
+    }
+
+    &.desc {
+      span:first-child {
+        width: 15px;
+      }
+
+      span:last-child {
+        width: 5px;
+      }
+    }
+  }
+
+  @media screen and (max-width: Constants.$page-size-l) {
+    flex-wrap: wrap;
+
+    &__block {
+      margin: 0 0 10px 10px;
+    }
+  }
+
+  @media screen and (max-width: Constants.$page-size-m) {
+    margin: 20px;
+  }
+}

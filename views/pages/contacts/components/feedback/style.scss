@@ -1,0 +1,114 @@
+@use '~@assets/Constants.scss';
+
+$message_block_length: 300px;
+
+.contacts__feedback {
+  width: 100%;
+
+  &_form {
+    margin-bottom: 20px;
+  }
+
+  &_field {
+    display: inline-block;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: text;
+
+    &:after, &:before {
+      display: block;
+      content: '';
+      width: 0;
+      border-top: 2px solid #3399FF;
+      position: relative;
+      transition-duration: 0.3s;
+    }
+
+    &:after {
+      bottom: 1px;
+    }
+
+    &:before {
+      left: $message_block_length;
+      top: 1px;
+    }
+
+    &:hover {
+      &:after, &:before {
+        width: $message_block_length;
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      & .contacts__feedback_label {
+        display: block;
+
+        &:before {
+          top: 2px;
+          height: calc(100% - 5px);
+        }
+
+        &:after {
+          height: calc(100% - 5px);
+        }
+      }
+    }
+  }
+
+  &_label {
+    &:before, &:after {
+      display: block;
+      content: '';
+      border-right: 2px solid #3399FF;
+      position: absolute;
+      transition-duration: 0.3s;
+      height: 0;
+    }
+
+    &:before {
+      left: 0;
+      top: calc(100% - 3px);
+    }
+
+    &:after {
+      left: 298px;
+      top: 2px;
+    }
+  }
+
+  &_input {
+    border: 1px solid Constants.$border_color;
+    color: Constants.$main_color;
+    width: $message_block_length;
+    box-sizing: border-box;
+    padding: 2px 5px;
+    font-size: 16px;
+
+    &.danger {
+      border-color: red;
+    }
+  }
+
+  textarea {
+    margin-bottom: -5px;
+  }
+
+  &_submit {
+    border: 1px solid Constants.$border_color;
+    color: Constants.$main_color;
+    width: $message_block_length;
+    background: white;
+    line-height: 1.5;
+    padding: 3px 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  &_error {
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    color: red;
+  }
+}

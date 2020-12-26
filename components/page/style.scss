@@ -1,0 +1,11 @@
+@use '~@assets/Constants.scss';
+
+.page {
+  height: 100%;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  font-family: Gotham, sans-serif;
+  color: Constants.$main_color;
+  font-size: 1rem;
+}

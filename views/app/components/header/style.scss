@@ -22,11 +22,11 @@
     align-items: center;
     line-height: 1.5;
 
-    @media screen and (max-width: 740px) {
+    @media screen and (max-width: Constants.$page-size-m) {
       padding-right: 24px;
     }
 
-    @media screen and (max-width: 410px) {
+    @media screen and (max-width: Constants.$page-size-s) {
       padding-right: 15px;
     }
   }

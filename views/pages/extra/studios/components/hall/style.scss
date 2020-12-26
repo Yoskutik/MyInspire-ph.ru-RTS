@@ -1,0 +1,127 @@
+@use '~@assets/Constants.scss';
+
+.hall {
+  border-bottom: 1px solid Constants.$border_color;
+  padding: 1.5rem 0;
+
+  &:first-child {
+    padding-top: 1rem;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__title {
+    font-weight: normal;
+    margin: 0 0 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__preview {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 2rem;
+
+    &_main-image {
+      width: 520px;
+      margin-right: 0.5rem;
+
+      &.single {
+        width: calc(620px + 0.5rem);
+        margin-right: 0;
+      }
+    }
+
+    &_images {
+      flex-shrink: 0;
+      font-size: 0;
+      width: 100px;
+    }
+
+    &_small-image {
+      max-width: 100%;
+      margin-bottom: 0.5rem;
+      border: 2px solid #fff;
+      cursor: pointer;
+
+      &:hover, &.active {
+        border: 2px solid Constants.$border_color;
+        box-shadow: 0 0 0.15rem rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &__info {
+    &_name {
+      font-weight: normal;
+      margin: 0 0 0.9rem;
+      font-size: 1.4rem;
+    }
+
+    &_price {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+
+      &:after {
+        content: " ₽";
+      }
+    }
+
+    &_description {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    &_contacts p {
+      margin: 0.3rem 0 0 0;
+    }
+  }
+
+  @media screen and (max-width: Constants.$page-size-l) {
+    padding: 1.5rem 20px;
+
+    &__body {
+      flex-wrap: wrap;
+    }
+
+    &__preview {
+      margin: 0 0 20px 0;
+      width: 100%;
+
+      &_main-image {
+        width: calc(100% - 100px);
+
+        &.single {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: Constants.$page-size-m) {
+    &__preview {
+      &_main-image {
+        width: 81%;
+      }
+
+      &_images {
+        width: 19%;
+      }
+    }
+  }
+}
+
+a {
+  color: Constants.$main_color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

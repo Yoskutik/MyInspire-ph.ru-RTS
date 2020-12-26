@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
+const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const pages = require('./pages.json');
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -18,20 +21,10 @@ module.exports = (env = {}, argv = {}) => {
         robots: pages[key].robots,
         isDev,
         minify: isDev ? false : {
-            caseSensitive: false,
-            removeComments: true,
             collapseWhitespace: true,
-            removeRedundantAttributes: true,
             useShortDoctype: false,
             removeEmptyAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-            removeScriptTypeAttributes: true,
-            keepClosingSlash: false,
             minifyJS: { compress: { conditionals: false } },
-            minifyCSS: true,
-            minifyURLs: true,
-            sortAttributes: true,
-            sortClassName: true,
         },
     }));
 
@@ -50,14 +43,16 @@ module.exports = (env = {}, argv = {}) => {
         optimization: {
             minimize: !isDev,
             minimizer: [
-                new TerserPlugin({
+                new UglifyPlugin({
                     test: /.js$/i,
                     extractComments: false,
                     parallel: false,
-                    terserOptions: {
+                    uglifyOptions: {
                         output: { comments: false },
                     },
                 }),
+                new TerserPlugin(),
+                new CssMinimizerPlugin(),
             ],
         },
         devServer: {
@@ -70,6 +65,8 @@ module.exports = (env = {}, argv = {}) => {
                 '@assets': path.resolve(__dirname, 'assets'),
                 '@components': path.resolve(__dirname, 'components'),
                 '@pages': path.resolve(__dirname, 'views', 'pages'),
+                '@utils': path.resolve(__dirname, 'utils'),
+                '@data': path.resolve(__dirname, 'data'),
             },
         },
         module: {
@@ -103,6 +100,14 @@ module.exports = (env = {}, argv = {}) => {
                     outputPath: './static/assets',
                     name: `${isDev ? '[name]' : '[contenthash]'}.[ext]`,
                 },
+            }, {
+                test: /\.(jpg|webp)$/,
+                loader: 'file-loader',
+                options: {
+                    publicPath: '/static/assets/',
+                    outputPath: './static',
+                    name: fullPath => fullPath.replace(__dirname, ''),
+                },
             }],
         },
         plugins: [
@@ -111,6 +116,11 @@ module.exports = (env = {}, argv = {}) => {
             }),
             new CleanWebpackPlugin(),
             ...htmlPages,
+            new CopyPlugin({
+                patterns: [
+                    { from: '../assets/public', to: './' },
+                ],
+            }),
         ],
     };
 };

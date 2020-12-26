@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import React, { FC, useEffect, useState } from 'react';
 import pages from '../../../../../pages.json';
 import './style.scss';
 
@@ -20,7 +20,7 @@ export const Nav: FC<INav> = ({ visible }) => {
             {Object.keys(pages)
                 .filter(key => Object.keys(pages[key]).includes('name'))
                 .map(key => (
-                    <Link to={key === 'home' ? '/' : `/${key}/`} key={Math.random()}
+                    <Link to={key === 'home' ? '/' : `/${key}/`} key={key}
                           onClick={() => setDocumentTitle(pages[key].title)}>
                         <span>{pages[key].name}</span>
                     </Link>

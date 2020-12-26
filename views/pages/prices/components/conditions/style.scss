@@ -1,0 +1,25 @@
+@use '~@assets/Constants.scss';
+
+.conditions {
+  margin-bottom: 2.5rem;
+
+  @media screen and (max-width: Constants.$page-size-m) {
+    padding: 0 20px;
+  }
+
+  &__title {
+    margin: 25px 0;
+    font-size: 1.2rem;
+  }
+
+  &__text {
+    text-align: justify;
+    text-indent: 2rem;
+    margin-bottom: 12px;
+    font-size: 1rem;
+
+    @media screen and (max-width: Constants.$page-size-s) {
+      text-align: initial;
+    }
+  }
+}

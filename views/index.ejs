@@ -7,7 +7,7 @@
     <title itemprop="headline"><%= htmlWebpackPlugin.options.title %></title>
     <meta itemprop="description" name="description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/public/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -22,27 +22,27 @@
     <meta property="og:locale" content="ru_RU"/>
 
     <script type="application/ld+json">
-{
-    "@context": "https://schema.org/",
-    "@type": "Organization",
-    "@id": "#Organization",
-    "url": "https://myinspire-ph.ru/",
-    "name": "Мельникова Татьяна",
-    "description": "Фотограф в Санкт-Петербурге",
-    "logo": "https://myinspire-ph.ru/photos/ava-500x500.jpg",
-    "telephone": "+79995154217",
-    "email": "tatiana.mix.1910@gmail.com",
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "г. Санкт-Петербург"
-    },
-    "sameAs": [
-        "https://www.instagram.com/myinspire_ph/",
-        "https://www.pinterest.ru/tatianamix1910/",
-        "https://vk.com/inspiredbyspb",
-        "https://wa.me/79995154217"
-    ]
-}
+    <%= JSON.stringify({
+        "@context": "https://schema.org/",
+        "@type": "Organization",
+        "@id": "#Organization",
+        "url": "https://myinspire-ph.ru/",
+        "name": "Мельникова Татьяна",
+        "description": "Фотограф в Санкт-Петербурге",
+        "logo": "https://myinspire-ph.ru/photos/ava-500x500.jpg",
+        "telephone": "+79995154217",
+        "email": "tatiana.mix.1910@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "г. Санкт-Петербург"
+        },
+        "sameAs": [
+            "https://www.instagram.com/myinspire_ph/",
+            "https://www.pinterest.ru/tatianamix1910/",
+            "https://vk.com/inspiredbyspb",
+            "https://wa.me/79995154217"
+        ]
+    })%>
     </script>
 
     <% if (!htmlWebpackPlugin.options.isDev) { %>

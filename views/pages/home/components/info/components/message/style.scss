@@ -1,0 +1,27 @@
+@use '~@assets/Constants.scss';
+
+.info__message {
+  margin-right: 3rem;
+
+  &_title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: normal;
+    margin: 25px 0 12px;
+  }
+
+  p {
+    text-align: justify;
+    text-indent: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: Constants.$page-size-l) {
+    margin-right: 1.8rem;
+  }
+
+  @media screen and (max-width: Constants.$page-size-m) {
+    margin: 0 0 20px 0;
+  }
+}

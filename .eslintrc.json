@@ -38,6 +38,9 @@
             "allow": ["timeEnd", "warn"]
         }],
         "no-return-assign": "off",
+        "no-param-reassign": ["error", {
+            "props": false
+        }],
         "func-names": "off",
         "linebreak-style": "off",
         "no-plusplus": "off",
@@ -61,7 +64,7 @@
                 "position": "before"
             }],
             "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
-            "alphabetize": {"order": "asc"}
+            "alphabetize": {"order": "desc"}
         }],
         "import/prefer-default-export": "off",
         "no-unused-vars": "off",
