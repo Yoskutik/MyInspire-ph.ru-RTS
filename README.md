@@ -1,11 +1,12 @@
 # MyInspire-ph.ru
 
-![Tensorflow](https://img.shields.io/badge/TypeScript-444?logo=typescript&logoColor=f0f0f0)
-![Tensorflow](https://img.shields.io/badge/JavaScript-444?logo=javascript&logoColor=f0f0f0)
-![Tensorflow](https://img.shields.io/badge/React-444?logo=react&logoColor=f0f0f0)
-![Tensorflow](https://img.shields.io/badge/Webpack-444?logo=webpack&logoColor=f0f0f0)
-![Tensorflow](https://img.shields.io/badge/SCSS-444?logo=sass&logoColor=f0f0f0)
-![Tensorflow](https://img.shields.io/badge/ESLint-444?logo=eslint&logoColor=f0f0f0)
+![](https://img.shields.io/badge/TypeScript-444?logo=typescript&logoColor=f0f0f0)
+![](https://img.shields.io/badge/JavaScript-444?logo=javascript&logoColor=f0f0f0)
+![](https://img.shields.io/badge/React-444?logo=react&logoColor=f0f0f0)
+![](https://img.shields.io/badge/Webpack-444?logo=webpack&logoColor=f0f0f0)
+![](https://img.shields.io/badge/SCSS-444?logo=sass&logoColor=f0f0f0)
+![](https://img.shields.io/badge/ESLint-444?logo=eslint&logoColor=f0f0f0)
+![](https://travis-ci.com/Yoskutik/MyInspire-ph.ru-RTS.svg?branch=master)
 
 <small>
     Я в своём познании настолько преисполнился, что переписываю этот сайт в третий
@@ -39,9 +40,9 @@
 ---
 
 Консольные команды:
-  - `npm run start`: Запуск Dev сервера.
+  - `npm start`: Запуск Dev сервера.
   - `npm run build`: Сборка сайта в production моде, т.е. со всеми возможными сокращениями.
-  - `npm run test`: ESLint тесты.
+  - `npm test`: ESLint тесты.
   - `npm run fix`: ESLint чинит все, что может.
 
 ---

@@ -32,7 +32,7 @@ const Portfolio: FC = () => {
 
     const updateGalleryItems = (imgSrc: string) => {
         if (imgSrc) {
-            setGalleryItems(galleryPhotos[imgSrc.match(/\/(\w+)\.jpg/)[1]]);
+            setGalleryItems(galleryPhotos[imgSrc.replace(/.+\//, '').replace('.jpg', '')]);
             document.body.style.overflow = 'hidden';
             window.location.hash = 'gallery';
         } else {

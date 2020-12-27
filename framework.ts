@@ -11,11 +11,6 @@ declare module '*.jpg' {
     export = value;
 }
 
-declare module '*.webp' {
-    const value: any;
-    export = value;
-}
-
 interface EventTarget {
     on: (
         type: string,

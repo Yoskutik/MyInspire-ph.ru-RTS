@@ -15,7 +15,7 @@ module.exports = (env = {}, argv = {}) => {
     const isDev = argv.mode !== 'production';
     const htmlPages = Object.keys(pages).map(key => new HtmlPlugin({
         filename: `${key === 'home' ? '' : `${key}/`}index.html`,
-        template: './index.ejs',
+        template: './views/index.ejs',
         description: pages[key].description,
         keywords: pages[key].keywords,
         title: pages[key].title,
@@ -31,13 +31,12 @@ module.exports = (env = {}, argv = {}) => {
 
     return {
         mode: isDev ? 'development' : 'production',
-        context: path.resolve(__dirname, 'views'),
         cache: false,
-        entry: './index.tsx',
+        entry: './views/index.tsx',
         output: {
             filename: `static/${isDev ? '' : '[contenthash].'}bundle.js`,
             path: path.resolve(__dirname, 'app'),
-            chunkFilename: `./static/chunks/${isDev ? '[id]' : '[сhunkhash]'}.chunk.js`,
+            chunkFilename: `./static/chunks/${isDev ? '[id]' : '[contenthash]'}.chunk.js`,
             publicPath: '/',
         },
         devtool: isDev ? 'inline-source-map' : false,
@@ -47,7 +46,6 @@ module.exports = (env = {}, argv = {}) => {
                 new UglifyPlugin({
                     test: /.js$/i,
                     extractComments: false,
-                    parallel: false,
                     uglifyOptions: {
                         output: { comments: false },
                     },
@@ -119,7 +117,7 @@ module.exports = (env = {}, argv = {}) => {
             ...htmlPages,
             new CopyPlugin({
                 patterns: [
-                    { from: '../assets/public', to: './' },
+                    { from: './assets/public', to: './' },
                     { from: './api', to: './api' },
                 ],
             }),

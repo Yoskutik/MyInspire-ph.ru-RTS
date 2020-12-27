@@ -1,7 +1,7 @@
 import RequireContext = __WebpackModuleApi.RequireContext;
 
 export const preprocessRequire = (ctx: RequireContext): string[] => {
-    const prefix = ctx.id.split(' ')[0].replace('..', '/static');
+    const prefix = ctx.id.split(' ')[0].replace('./', '/static/');
     return ctx.keys().map(it => it.replace('.', `${prefix}`));
 };
 

@@ -47,6 +47,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "basic-ftp": "^4.6.3",
     "mobx": "^5.15.7",
     "mobx-react-lite": "^2.2.2",
     "path": "^0.12.7",
