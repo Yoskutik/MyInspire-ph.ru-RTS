@@ -5,7 +5,7 @@ import locations from '@data/locations.json';
 import { Location } from './Location';
 import './style.scss';
 
-const images = preprocessRequire(require.context('@assets/photos/extra/locations', true), 'extra/locations');
+const images = preprocessRequire(require.context('@assets/photos/extra/locations'));
 
 const Locations: FC = () => {
     useEffect(() => {
@@ -24,7 +24,7 @@ const Locations: FC = () => {
             <Container cls="locations">
                 {locations.map(loc => (
                     <Location key={Math.random()} {...loc}
-                              photosList={images.filter(it => it.includes(loc.photosDir) && it.endsWith('m'))} />
+                              photosList={images.filter(it => it.includes(loc.photosDir) && it.endsWith('m.jpg'))} />
                 ))}
             </Container>
         </Page>

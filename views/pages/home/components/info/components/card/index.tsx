@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
-import { preprocessRequire } from '@utils';
 import { Picture } from '@components';
 import { InstagramIcon, VKIcon, WhatsAppIcon } from '@components/icons';
+import ava from '@assets/photos/ava.jpg';
 import './style.scss';
-
-const ava = preprocessRequire(require.context('@assets/photos', false, /ava\.(webp|jpg)$/i))[0];
 
 export const Card: FC = () => (
     <div className="info__card" itemScope itemType="http://schema.org/Organization">

@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import './style.scss';
+import { Picture } from '@components';
 
 interface InfoProps {
     title: string;
@@ -35,14 +36,13 @@ const Preview: FC<{photos: string[]}> = ({ photos }) => {
 
     return (
         <div className="hall__preview">
-            <img alt="Фотография зала" src={`${photos[activeIndex]}.jpg`}
-                 className={`hall__preview_main-image ${photos.length > 1 ? '' : 'single'}`} />
+            <Picture alt="Фотография зала" src={photos[activeIndex]}
+                     cls={`hall__preview_main-image ${photos.length > 1 ? '' : 'single'}`} />
             {photos.length > 1 && (
                 <div className="hall__preview_images">
                     {photos.map((photo, i) => (
-                        <img alt="Фотография зала" onClick={() => setActiveIndex(i)} src={`${photo}.jpg`}
-                             key={Math.random()}
-                             className={`hall__preview_small-image ${i === activeIndex ? 'active' : ''}`} />
+                        <Picture alt="Фотография зала" onClick={() => setActiveIndex(i)} src={photo} key={Math.random()}
+                                 cls={`hall__preview_small-image ${i === activeIndex ? 'active' : ''}`} />
                     ))}
                 </div>
             )}

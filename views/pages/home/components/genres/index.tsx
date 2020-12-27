@@ -11,12 +11,12 @@ export const Genres: FC = () => {
         document.on('scroll', debounce(() => {
             if (window.location.pathname !== '/') return;
             $$('.genres__container').forEach(it => {
-                if (it.isVisible()) {
+                if (it.isVisible(50)) {
                     it.style.transform = 'translateY(0)';
                     it.style.opacity = '1';
                 } else {
                     it.style.opacity = '0';
-                    it.style.transform = `translateY(${80 * Math.sin(it.getBoundingClientRect().bottom)}px)`;
+                    it.style.transform = `translateY(${80 * Math.sign(it.getBoundingClientRect().bottom)}px)`;
                 }
             });
         }, 50))
@@ -26,7 +26,7 @@ export const Genres: FC = () => {
     return (
         <div className="genres">
             {genres.map((genre, i) => (
-                <Genre key={`genre-${i}`} {...genre} imgSrc={`/assets/photos/home/${genre.imgSrc}`}
+                <Genre key={`genre-${i}`} {...genre} imgSrc={`/static/assets/photos/home/${genre.imgSrc}.jpg`}
                        alt={keywordGenerator.next().value} />
             ))}
         </div>

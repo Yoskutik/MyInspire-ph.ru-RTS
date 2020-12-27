@@ -1,8 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 /**
- * Возможно, кому-то покажется, что такое решение выглядит ужасно. Но таким я отвечаю, что они просто хэйтеры
+ * Возможно, кому-то покажется, что такое решение выглядит ужасно. Но таким я отвечаю, что они просто хэйтеры.
+ * Нет, я не хочу использовать jQuery. jQuery полон функций, которые мне не нужны.
+ * Да, я считаю, что "on" и "$" удобнее, чем "addEventListener" и "document.querySelector"
  */
+
+declare module '*.jpg' {
+    const value: any;
+    export = value;
+}
+
+declare module '*.webp' {
+    const value: any;
+    export = value;
+}
 
 interface EventTarget {
     on: (

@@ -1,11 +1,9 @@
 import RequireContext = __WebpackModuleApi.RequireContext;
 
-export const preprocessRequire = (ctx: RequireContext, prefix = ''): string[] => (
-    ctx.keys().map(it => it
-        .replace('.', `/assets/photos${prefix ? `/${prefix}` : ''}`)
-        .replace(/\.(webp|jpg)$/, ''))
-        .filter((value, index, self) => self.indexOf(value) === index)
-);
+export const preprocessRequire = (ctx: RequireContext): string[] => {
+    const prefix = ctx.id.split(' ')[0].replace('..', '/static');
+    return ctx.keys().map(it => it.replace('.', `${prefix}`));
+};
 
 const keywords: string[] = [
     'Фотограф Санкт-Петербург',

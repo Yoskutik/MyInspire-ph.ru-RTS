@@ -5,7 +5,7 @@ import studios from '@data/studios.json';
 import hals from '@data/halls.json';
 import { Filters, IFilters, Hall } from './components';
 
-const images = preprocessRequire(require.context('@assets/photos/extra/studios', true), 'extra/studios');
+const images = preprocessRequire(require.context('@assets/photos/extra/studios'));
 
 const Studios: FC = () => {
     const [filters, setFilters] = useState<IFilters>({

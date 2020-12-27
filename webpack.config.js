@@ -3,11 +3,12 @@ const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const pages = require('./pages.json');
+const pages = require('./data/pages.json');
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = (env = {}, argv = {}) => {
@@ -101,12 +102,12 @@ module.exports = (env = {}, argv = {}) => {
                     name: `${isDev ? '[name]' : '[contenthash]'}.[ext]`,
                 },
             }, {
-                test: /\.(jpg|webp)$/,
+                test: /\.(jpg)$/,
                 loader: 'file-loader',
                 options: {
-                    publicPath: '/static/assets/',
+                    publicPath: '/static',
                     outputPath: './static',
-                    name: fullPath => fullPath.replace(__dirname, ''),
+                    name: fullPath => `${fullPath.replace(__dirname, '')}`,
                 },
             }],
         },
@@ -120,6 +121,15 @@ module.exports = (env = {}, argv = {}) => {
                 patterns: [
                     { from: '../assets/public', to: './' },
                 ],
+            }),
+            new ImageminWebpWebpackPlugin({
+                overrideExtension: false,
+                config: [{
+                    test: /\.jpg$/,
+                    options: {
+                        quality: 100,
+                    },
+                }],
             }),
         ],
     };

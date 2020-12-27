@@ -11,23 +11,17 @@ interface IReactImageGalleryItem {
 
 const ReactImageGallery = React.lazy(() => import('react-image-gallery'));
 
-const thumbnails = preprocessRequire(
-    require.context('@assets/photos/portfolio/thumbnails', false, /\.(webp|jpg)$/i),
-    'portfolio/thumbnails',
-);
+const thumbnails = preprocessRequire(require.context('@assets/photos/portfolio/thumbnails', false));
 
 const galleryPhotos: Record<string, IReactImageGalleryItem[]> = {};
-preprocessRequire(
-    require.context('@assets/photos/portfolio/gallery', true, /\.(jpg)$/i),
-    'portfolio/gallery',
-)
-    .filter(it => !it.endsWith('m'))
+preprocessRequire(require.context('@assets/photos/portfolio/gallery'))
+    .filter(it => !it.endsWith('m.jpg'))
     .forEach(it => {
-        const key = it.replace('/assets/photos/portfolio/gallery/', '').replace(/\/.+$/, '');
+        const key = it.replace('/static/assets/photos/portfolio/gallery/', '').replace(/\/.+$/, '');
         if (!galleryPhotos[key]) galleryPhotos[key] = [];
         galleryPhotos[key].push({
-            original: `${it}.jpg`,
-            thumbnail: `${it}m.jpg`,
+            original: it,
+            thumbnail: it.replace('.jpg', 'm.jpg'),
         });
     });
 
@@ -37,12 +31,21 @@ const Portfolio: FC = () => {
     const [galleryItems, setGalleryItems] = useState<IReactImageGalleryItem[]>(null);
 
     const updateGalleryItems = (imgSrc: string) => {
-        const items = galleryPhotos[imgSrc.replace(/^.+\//, '')];
-        document.body.style.overflow = imgSrc ? 'hidden' : null;
-        setGalleryItems(items);
+        if (imgSrc) {
+            setGalleryItems(galleryPhotos[imgSrc.match(/\/(\w+)\.jpg/)[1]]);
+            document.body.style.overflow = 'hidden';
+            window.location.hash = 'gallery';
+        } else {
+            document.body.style.overflow = null;
+            window.history.back();
+        }
     };
 
     useEffect(() => {
+        window.on('hashchange', () => {
+            if (window.location.hash === '') setGalleryItems(null);
+        });
+
         if (!isMobile) return;
         window.on('scroll', debounce(() => {
             if (window.location.pathname !== '/portfolio/') return;
@@ -58,8 +61,7 @@ const Portfolio: FC = () => {
             <HiddenTitle text="Портфолио" />
             <div className="portfolio">
                 {thumbnails.map(imgSrc => (
-                    <Thumbnail key={imgSrc} imgSrc={imgSrc}
-                               onClick={() => updateGalleryItems(imgSrc)} />
+                    <Thumbnail key={imgSrc} imgSrc={imgSrc} onClick={() => updateGalleryItems(imgSrc)} />
                 ))}
             </div>
             {galleryItems && (

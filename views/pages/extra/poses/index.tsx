@@ -18,8 +18,7 @@ const Pose: FC<PoseProps> = ({ imgSrc, title, children }) => (
     </div>
 );
 
-const images = preprocessRequire(require.context('@assets/photos/extra/poses', false), 'extra/poses')
-    .map(it => `${it}.jpg`);
+const images = preprocessRequire(require.context('@assets/photos/extra/poses', false));
 
 const Poses: FC = () => (
     <Page>

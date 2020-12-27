@@ -2,14 +2,18 @@
 
 .list {
   margin: 20px auto 2.5rem;
+  flex-wrap: wrap;
+  display: flex;
 
   &__item {
-    max-width: 600px;padding: 1.5rem 1rem 1.5rem 2rem;
     border: 1px solid Constants.$border_color;
+    padding: 1.5rem 1rem 1.5rem 2rem;
     justify-content: space-between;
-    margin: 1.5rem auto;
+    box-sizing: border-box;
+    margin: 1.5rem auto 0;
     position: relative;
     display: flex;
+    width: 580px;
 
     @media screen and (max-width: 650px) {
       margin: 1.5rem 10px;

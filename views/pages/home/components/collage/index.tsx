@@ -4,7 +4,7 @@ import { Picture } from '@components';
 import { ArrowIcon } from '@components/icons';
 import './style.scss';
 
-const allPhotos = preprocessRequire(require.context('@assets/photos/home', true, /\.(webp|jpg)$/i), 'home')
+const allPhotos = preprocessRequire(require.context('@assets/photos/home'))
     .sort(() => Math.random() - 0.5);
 const verticalPhotos = allPhotos.filter(it => it.includes('vertical'));
 const horizontalPhotos = allPhotos.filter(it => it.includes('horizontal'));

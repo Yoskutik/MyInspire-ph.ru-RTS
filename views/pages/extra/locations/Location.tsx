@@ -31,7 +31,7 @@ const LocationPicture: FC<LocationPictureProps> = props => {
 };
 
 export const Location: FC<LocationProps> = props => {
-    const [mainPhoto, setMainPhoto] = useState(props.photosList[0].replace(/m$/, ''));
+    const [mainPhoto, setMainPhoto] = useState(props.photosList[0]);
     const ref = useRef(null);
 
     const onSmallImageLoad = (): void => {
@@ -50,14 +50,13 @@ export const Location: FC<LocationProps> = props => {
     return (
         <div className="location" ref={ref}>
             <div className="location__photos">
-                <Picture cls="location__photos_main" alt={props.title} src={mainPhoto} />
+                <Picture cls="location__photos_main" alt={props.title} src={mainPhoto.replace(/m.jpg$/, '.jpg')} />
                 <div className="location__photos_extra">
                     <ArrowIcon cls="arrow arrow-up" size={12} fill="#fff" />
                     <div className="location__photos_extra--photos">
                         {props.photosList.map((ph, i) => (
                             <LocationPicture src={ph} key={ph} alt={props.title} lazy={i > 3} active={i === 0}
-                                     onClick={() => setMainPhoto(ph.replace(/m$/, ''))}
-                                     onLoad={onSmallImageLoad}/>
+                                     onClick={() => setMainPhoto(ph)} onLoad={onSmallImageLoad}/>
                         ))}
                     </div>
                     <ArrowIcon cls="arrow arrow-down" size={12} fill="#fff" />

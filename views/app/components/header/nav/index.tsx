@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { FC, useEffect, useState } from 'react';
-import pages from '../../../../../pages.json';
+import pages from '@data/pages.json';
 import './style.scss';
 
 interface INav {

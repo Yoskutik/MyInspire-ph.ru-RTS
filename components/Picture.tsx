@@ -12,7 +12,7 @@ export interface PictureProps {
 export const Picture: FC<PictureProps> = ({ src, cls, lazy, alt, onLoad, onClick }) => (
     <picture>
         <source srcSet={`${src}.webp`} type="image/webp" />
-        <img className={cls} alt={alt} src={`${src}.jpg`} loading={lazy ? 'lazy' : 'eager'} onLoad={onLoad}
+        <img className={cls} alt={alt} src={src} loading={lazy ? 'lazy' : 'eager'} onLoad={onLoad}
              onClick={onClick} />
     </picture>
 );
