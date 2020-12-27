@@ -50,12 +50,7 @@
             "ignoredNodes": ["JSXElement *"]
         }],
         "arrow-parens": ["error", "as-needed"],
-        "comma-dangle":  ["error", {
-            "arrays": "always-multiline",
-            "objects": "always-multiline",
-            "functions": "always-multiline",
-            "imports": "always-multiline"
-        }],
+        "comma-dangle":  ["error", "always-multiline"],
         "quote-props": ["error", "as-needed"],
         "import/order": ["error", {
             "pathGroups": [{

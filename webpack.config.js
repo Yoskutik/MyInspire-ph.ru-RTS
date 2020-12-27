@@ -37,7 +37,7 @@ module.exports = (env = {}, argv = {}) => {
         output: {
             filename: `static/${isDev ? '' : '[contenthash].'}bundle.js`,
             path: path.resolve(__dirname, 'app'),
-            chunkFilename: `./static/chunks/${isDev ? '[id]' : '[contenthash]'}.chunk.js`,
+            chunkFilename: `./static/chunks/${isDev ? '[id]' : '[сhunkhash]'}.chunk.js`,
             publicPath: '/',
         },
         devtool: isDev ? 'inline-source-map' : false,
@@ -120,6 +120,7 @@ module.exports = (env = {}, argv = {}) => {
             new CopyPlugin({
                 patterns: [
                     { from: '../assets/public', to: './' },
+                    { from: './api', to: './api' },
                 ],
             }),
             new ImageminWebpWebpackPlugin({
