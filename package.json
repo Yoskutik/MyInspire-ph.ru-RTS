@@ -1,6 +1,6 @@
 {
   "name": "myinspire-ph.ru",
-  "version": "3.0.8",
+  "version": "3.0.12",
   "description": "The 3rd version of the site written on React and TypeScript",
   "scripts": {
     "start": "webpack serve",
