@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/Webpack-444?logo=webpack&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/SCSS-444?logo=sass&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/ESLint-444?logo=eslint&logoColor=f0f0f0)
-![](https://travis-ci.com/Yoskutik/MyInspire-ph.ru-RTS.svg?branch=master)
+[![](https://github.com/yoskutik/MyInspire-ph.ru-RTS/workflows/Deploy/badge.svg)](https://github.com/yoskutik/MyInspire-ph.ru-RTS/actions)
 
 <small>
     Я в своём познании настолько преисполнился, что переписываю этот сайт в третий

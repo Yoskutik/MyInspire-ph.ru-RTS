@@ -1,4 +1,4 @@
-name: Автоматический деплой сайта при удачном прохождении тестов и сборке
+name: Deploy
 
 env:
   NODE_VERSION: '12.x'
@@ -12,23 +12,42 @@ on:
   pull_request_target:
 
 jobs:
-  build:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@latest
-      
+      - uses: actions/checkout@master
+
+      - name: Caching
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: npm install, build, and test
+      - name: Test
         run: |
           npm install
           npm test
-          npm run build
-      
-      - name: deploy
-        run: |
-          sudo apt-get install lftp
-          lftp -h
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: vh302.timeweb.ru
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: ./app/
+          server-dir: ./tmp/
+#          dangerous-clean-slate: true
