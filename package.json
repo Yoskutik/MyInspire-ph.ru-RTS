@@ -1,6 +1,6 @@
 {
   "name": "myinspire-ph.ru",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "The 3rd version of the site written on React and TypeScript",
   "scripts": {
     "start": "webpack serve",
@@ -37,7 +37,7 @@
     "favicons-webpack-plugin": "^5.0.0-alpha.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
-    "husky": "^5.0.6",
+    "husky": "^4.3.6",
     "imagemin-webp-webpack-plugin": "^3.3.3",
     "mini-css-extract-plugin": "^1.2.1",
     "postcss-loader": "^4.0.4",
