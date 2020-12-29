@@ -15,6 +15,7 @@ const pages = require('./data/pages.json');
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 module.exports = (env = {}, argv = {}) => {
     const isDev = argv.mode !== 'production';
+
     const htmlPages = Object.keys(pages).map(key => new HtmlPlugin({
         filename: `${key === 'home' ? '' : `${key}/`}index.html`,
         template: './views/index.ejs',
