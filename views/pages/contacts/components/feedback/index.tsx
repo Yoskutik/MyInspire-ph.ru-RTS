@@ -58,7 +58,6 @@ export const Feedback: FC = () => {
             body: new FormData(form),
         })
             .then(response => {
-                // TODO
                 if (response.ok) {
                     lastSendAt = Date.now();
                     form.reset();

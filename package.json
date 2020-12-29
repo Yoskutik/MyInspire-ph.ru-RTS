@@ -1,15 +1,20 @@
 {
   "name": "myinspire-ph.ru",
-  "version": "3.0.0",
-  "description": "",
+  "version": "3.0.7",
+  "description": "The 3rd version of the site written on React and TypeScript",
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode=production",
     "test": "eslint --ext .ts,.tsx ./",
     "fix": "eslint --ext .ts,.tsx --fix ./"
   },
-  "author": "",
+  "author": "Alexandrovich Dmitriy <yoskutik@gmail.com>",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm --no-git-tag-version version patch && git add package.json"
+    }
+  },
   "devDependencies": {
     "@types/react": "^16.9.56",
     "@types/react-router-dom": "^5.1.6",
@@ -29,6 +34,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "favicons-webpack-plugin": "^5.0.0-alpha.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "imagemin-webp-webpack-plugin": "^3.3.3",
@@ -37,6 +43,7 @@
     "postcss-preset-env": "^6.7.0",
     "sass": "^1.28.0",
     "sass-loader": "^10.0.4",
+    "sitemap-webpack-plugin": "^1.0.0",
     "terser-webpack-plugin": "^5.0.3",
     "ts-loader": "^8.0.7",
     "typescript": "^4.0.5",

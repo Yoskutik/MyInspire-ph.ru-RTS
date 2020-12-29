@@ -7,12 +7,12 @@
     <title itemprop="headline"><%= htmlWebpackPlugin.options.title %></title>
     <meta itemprop="description" name="description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/public/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta property="og:title" content="Мельникова Татьяна">
     <meta property="og:description" content="Профессиональный фотограф в Санкт-Петербурге"/>
+    <!-- TODO другую бы -->
     <meta property="og:image" content="https://myinspire-ph.ru/assets/photos/ava-500x500.jpg"/>
     <meta property="og:image:type" content="image/jpg" />
     <meta property="og:image:width" content="500" />
@@ -56,6 +56,7 @@
     <% } %>
 </head>
 <body>
+    <h2 style="display: none"><%= htmlWebpackPlugin.options.title %></h2>
     <div id="body"></div>
 </body>
 </html>
