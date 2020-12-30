@@ -1,6 +1,6 @@
 {
   "name": "myinspire-ph.ru",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "The 3rd version of the site written on React and TypeScript",
   "scripts": {
     "start": "webpack serve",
@@ -55,9 +55,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "basic-ftp": "^4.6.3",
-    "mobx": "^5.15.7",
-    "mobx-react-lite": "^2.2.2",
     "path": "^0.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

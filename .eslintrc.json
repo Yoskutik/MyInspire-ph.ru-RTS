@@ -34,9 +34,6 @@
         }
     },
     "rules": {
-        "no-console": ["error", {
-            "allow": ["timeEnd", "warn"]
-        }],
         "no-return-assign": "off",
         "no-param-reassign": ["error", {
             "props": false
