@@ -8,14 +8,6 @@
   overflow: hidden;
   transition-duration: 0.5s;
 
-  &.opened {
-    max-height: 200px;
-
-    .footer__block_triangle {
-      transform: rotate(90deg);
-    }
-  }
-
   &_title {
     margin: 0 0 5px 0;
     font-size: 0.85rem;
@@ -46,10 +38,17 @@
       }
     }
   }
-}
 
-@media screen and (max-width: Constants.$page-size-s) {
-  .footer__block {
+  &.opened {
+    max-height: 200px;
+
+    .footer__block_triangle {
+      transform: rotate(90deg);
+    }
+  }
+
+
+  @media screen and (max-width: Constants.$page-size-s) {
     margin: 0 1.5rem 5px 0;
   }
 }

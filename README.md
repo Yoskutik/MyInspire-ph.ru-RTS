@@ -6,10 +6,11 @@
 ![](https://img.shields.io/badge/Webpack-444?logo=webpack&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/SCSS-444?logo=sass&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/ESLint-444?logo=eslint&logoColor=f0f0f0)
+[![](https://img.shields.io/badge/Stylelint-444?logo=stylelint&logoColor=f0f0f0)](data:text/html,Someday%20the%20image%20will%20appear)
 
 ![](https://img.shields.io/lgtm/grade/javascript/github/Yoskutik/MyInspire-ph.ru-RTS?label=Code%20quality)
 ![](https://img.shields.io/lgtm/alerts/github/Yoskutik/MyInspire-ph.ru-RTS?label=Vulnerabilities)
-[![](https://github.com/yoskutik/MyInspire-ph.ru-RTS/workflows/Deploy/badge.svg)](https://github.com/yoskutik/MyInspire-ph.ru-RTS/actions)
+[![](https://github.com/yoskutik/MyInspire-ph.ru-RTS/workflows/Testing/badge.svg)](https://github.com/yoskutik/MyInspire-ph.ru-RTS/actions)
 
 <small>
     Я в своём познании настолько преисполнился, что переписываю этот сайт в третий
