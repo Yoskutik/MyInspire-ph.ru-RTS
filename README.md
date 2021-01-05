@@ -4,17 +4,19 @@
 ![](https://img.shields.io/badge/JavaScript-444?logo=javascript&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/React-444?logo=react&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/Webpack-444?logo=webpack&logoColor=f0f0f0)
+![](https://img.shields.io/badge/Github%20Actions-444?logo=github&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/SCSS-444?logo=sass&logoColor=f0f0f0)
 ![](https://img.shields.io/badge/ESLint-444?logo=eslint&logoColor=f0f0f0)
-[![](https://img.shields.io/badge/Stylelint-444?logo=stylelint&logoColor=f0f0f0)](data:text/html,Someday%20the%20image%20will%20appear)
+![](https://img.shields.io/badge/Stylelint-444?logo=stylelint&logoColor=f0f0f0)
+![](https://img.shields.io/badge/PHP-444?logo=php&logoColor=f0f0f0)
 
 ![](https://img.shields.io/lgtm/grade/javascript/github/Yoskutik/MyInspire-ph.ru-RTS?label=Code%20quality)
 ![](https://img.shields.io/lgtm/alerts/github/Yoskutik/MyInspire-ph.ru-RTS?label=Vulnerabilities)
-[![](https://github.com/yoskutik/MyInspire-ph.ru-RTS/workflows/Testing/badge.svg)](https://github.com/yoskutik/MyInspire-ph.ru-RTS/actions)
+![](https://github.com/yoskutik/MyInspire-ph.ru-RTS/workflows/Testing/badge.svg)
 
 <small>
     Я в своём познании настолько преисполнился, что переписываю этот сайт в третий
-    <strike>и в последний</strike> раз
+    <s>и в последний</s> раз
 </small>
 
 <br/>
@@ -53,41 +55,59 @@
 
 ---
 
-А теперь мальчики и девочки, то, на что я убил большую часть времени:
- - Скорость загрузки должна быть высокой, поэтому я использовал:
-   - Минификацию файлов. И стилестических, и скриптовых. Даже проводил исследование, какой
-   минификатор лучше. И в моем случае смесь `UglifyJS` и `Terser` дала наилучший результат.
-   - Формат `.webp` для фотографий. Он гораздо легче, чем `.jpg`, а сравнивать в `.png`
-   даже не имеет смысла.
-   - С помощью `react-router-dom` я сделал по факту один `bundle.js`, включающий в себя
-   заголовок, подвал и общие стили. А содержимое страниц я распихал по чанкам. Так, при 
-   переходе из одной страницы в другую, пользователь тратит буквально пару килобайт для
-   загрузки (не считая фотографий) 
-   - Фактический размер изображения не превышает размера экрана. То есть никаких 6000х4000
-   пикселей, хоть такие фотографии и более качественны.
-   - Ленивая загрузка везде, где можно. В том числе и для React компонент.
-   - Попытался не слишком нагружать код дополнительными фреймворками и прочим.
-   - А ещё `font-display: fallback` для загрузки шрифтов должен (в теории) помочь.
- - ~~Сформировал семантическое ядро.~~ Хе-хе. Ну, я старался, честно.
- - Попытался добавить быстрые ссылки для Yandex.
- - Использовал адаптивную вёрстку.
- - Переключил HTTP на HTTPS.
- - Переключил HTTP/1.1 ни HTTP/2.
- - Добавил `.htaccess`:
-   - Избавился от дубликатов страниц (например, `myinspire-ph.ru////` или 
-   `myinspire-ph.ru/index.html`).
-   - Добавил срок действия для файлов. В теории, браузер будет так лучше кэшировать файлы.
-   А если те были таки изменены, они просто придут с другим названием. Профит.
- - Добавил `robots.txt`.
- - Добавил `sitemap.xml` с автоматическим обновлением даты. 
- - Добавил `favicon` разных размеров для Android и IPhone.
- - Добавил ссылки на социальные сети.
- - Добавил Open Graph для красивого отображения в социальных сетях.
-
-P.S. Я не СЕО'шник, так что не сетуйте почём зря.
-
 <details>
-    <summary>CEO оптимизация</summary>
-    <br>
-    asd
+  <summary><h2>CEO оптимизация</h2></summary>
+  <br>
+  <ul>
+    <li>
+      Для повышения скорости загрузки было применено:
+      <ul>
+        <li>
+          Минификация файлов. А именно <code>UglifyJS</code>, <code>Terser</code> и 
+          <code>CssMinimizer</code>.
+        </li>
+        <li>Формат <code>.webp</code> для фотографий.</li>
+        <li>
+          С помощью <code>react-router-dom</code> я сделал по факту один <code>bundle.js</code>, 
+          включающий в себя заголовок, подвал и общие стили. А содержимое страниц я распихал по 
+          чанкам. Так, при переходе из одной страницы в другую, пользователь тратит буквально 
+          пару килобайт для загрузки (не считая фотографий).
+        </li>
+        <li>
+          Фактический размер изображения не превышает размера экрана. То есть никаких 6000х4000px
+          пикселей, хоть такие фотографии и более качественны.
+        </li>
+        <li>Ленивая загрузка везде, где можно. В том числе и для React компонент.</li>
+        <li>Попытался не слишком нагружать код дополнительными фреймворками и прочим.</li>
+        <li>
+          А ещё <code>font-display: fallback</code> для загрузки шрифтов должен (в теории) 
+          помочь.
+        </li>
+        </ul>
+      <li><s>Сформировал семантическое ядро</s> Постарался сформировать</li>
+      <li>Установил быстрые ссылки для Yandex.</li>
+      <li>Использовал адаптивную вёрстку.</li>
+      <li>Переключил HTTP на HTTPS.</li>
+      <li>Переключил HTTP/1.1 ни HTTP/2.</li>
+      <li>
+        Добавил <code>.htaccess</code>
+        <ul>
+          <li>
+            Избавился от дубликатов страниц (например, <code>myinspire-ph.ru////</code> или
+            <code>myinspire-ph.ru/index.html</code>).
+          </li>
+          <li>Добавил срок действия для файлов для кэширования.</li>
+        </ul>
+      </li>
+      <li>Добавил <code>robots.txt</code>.</li>
+      <li>
+        Добавил <code>sitemap.xml</code> с автоматическим обновлением даты при обновлении
+        сайта.
+      </li>
+      <li>Добавил <code>favicon</code> разных размеров для Android и IPhone.</li>
+      <li>Добавил ссылки на социальные сети.</li>
+      <li>Добавил Open Graph для красивого отображения в социальных сетях.</li>
+  </ul>
+  <hr/>
+  P.S. Я не СЕО'шник, так что не сетуйте, если я что-то не то сделал. Лучше заведите issue.
 </details>
