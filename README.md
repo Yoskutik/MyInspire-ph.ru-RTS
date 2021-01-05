@@ -148,6 +148,20 @@
 
 ---
 
-<a href="https://github.com/">
+Контакты:
+
+<a href="https://github.com/Yoskutik">
   <img src="https://img.shields.io/badge/Github-444?logo=github&logoColor=f0f0f0"/>
+</a>
+
+<a href="https://stackoverflow.com/users/11589183/yoskutik">
+  <img src="https://img.shields.io/badge/StackOverflow-444?logo=stackoverflow&logoColor=f0f0f0"/>
+</a>
+
+<a href="https://t.me/yoskutik">
+  <img src="https://img.shields.io/badge/Telegram-444?logo=telegram&logoColor=f0f0f0"/>
+</a>
+
+<a href="https://vk.com/yoskutik">
+  <img src="https://img.shields.io/badge/VK-444?logo=vk&logoColor=f0f0f0"/>
 </a>
