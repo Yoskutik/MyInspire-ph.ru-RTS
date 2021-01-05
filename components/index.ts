@@ -1,5 +1,5 @@
 export * from './container';
-export * from './dropdownButton';
+export * from './menuButton';
 export * from './spinner';
 export * from './page';
 export * from './Picture';

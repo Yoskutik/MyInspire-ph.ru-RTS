@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import './style.scss';
 
-interface IDropdownButton {
+interface MenuButtonProps {
     onClick: () => void;
 }
 
-export const DropdownButton: FC<IDropdownButton> = ({ onClick }) => (
+export const MenuButton: FC<MenuButtonProps> = ({ onClick }) => (
     <button type="button" className="dropdown-button" onClick={onClick}>
         <span />
         <span />
