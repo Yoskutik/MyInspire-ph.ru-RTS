@@ -58,6 +58,11 @@ input:focus, textarea {
   flex-direction: column;
 }
 
+.super-title {
+  position: fixed;
+  top: -100px;
+}
+
 @font-face {
   font-family: Gotham;
   font-display: fallback;

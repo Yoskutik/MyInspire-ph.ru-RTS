@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState, Suspense } from 'react';
 import { debounce, isMobileOrTablet, preprocessRequire } from '@utils';
-import { Page, HiddenTitle, Spinner } from '@components';
+import { Page, Spinner } from '@components';
 import { Thumbnail } from './thumbnail';
 import './style.scss';
 
@@ -58,7 +58,6 @@ const Portfolio: FC = () => {
 
     return (
         <Page>
-            <HiddenTitle text="Портфолио" />
             <div className="portfolio">
                 {thumbnails.map(imgSrc => (
                     <Thumbnail key={imgSrc} imgSrc={imgSrc} onClick={() => updateGalleryItems(imgSrc)} />
