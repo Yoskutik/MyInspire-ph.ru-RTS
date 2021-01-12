@@ -6,22 +6,16 @@ import './style.scss';
 interface StylistsProps {
     name: string;
     type: string;
-    price: string | number;
     username: string;
 }
 
-const Stylist: FC<StylistsProps> = ({ name, type, price, username }) => (
+const Stylist: FC<StylistsProps> = ({ name, type, username }) => (
     <div className="stylists__item">
         <div className="stylists__item_column">
             <h2 className="stylists__item_title">{name}</h2>
             <h3 className="stylists__item_subtitle">{type}</h3>
         </div>
         <div className="stylists__item_column">
-            <span>
-                Цена:
-                {' '}
-                <span className="stylists__item_price">{price}</span>
-            </span>
             <span>
                 Контакты:
                 {' '}

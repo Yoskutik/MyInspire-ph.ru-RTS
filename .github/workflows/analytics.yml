@@ -2,9 +2,8 @@ name: Weekly analytics
 
 on:
   schedule:
-    - cron: 0 12 * * 6
+    - cron: 0 12 * * 0
   workflow_dispatch:
-
 
 jobs:
   Notify:
@@ -16,6 +15,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
+
+      - uses: zcong1993/setup-timezone@master
+        with:
+          timezone: "Europe/Moscow"
 
       - name: Install dependencies
         run: |
@@ -29,10 +32,6 @@ jobs:
 
       - name: Making request
         run: python ./.github/workflows/form_analytics.py ${{ secrets.ANALYTICS_VIEW_ID }}
-
-      - uses: zcong1993/setup-timezone@master
-        with:
-          timezone: "Europe/Moscow"
 
       - name: Notification
         run: |
